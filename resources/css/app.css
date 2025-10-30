@@ -1,0 +1,25 @@
+/* resources/css/app.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Шаардлагатай бол өөрийн нэмэлт CSS-ээ энд бичнэ */
+body {
+    background-color: #f3f4f6; /* Жишээ суурь өнгө */
+}
+
+/* Scrollbar-г өөрчилж болно (Webkit browsers) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #2d3748; /* dark:bg-gray-700 */
+}
+::-webkit-scrollbar-thumb {
+    background: #4a5568; /* dark:bg-gray-600 */
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #718096; /* dark:bg-gray-500 */
+}
