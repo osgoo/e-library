@@ -8,7 +8,7 @@
 
                     <h2 class="text-2xl font-semibold mb-6">Шинэ хуудас нэмэх</h2>
 
-                    <form method="POST" action="{{ route('admin.book.pages.store', ['id'=>$book->id]) }}">
+                    <form method="POST" action="{{ route('admin.book.pages.store', ['id'=>$book->id]) }} " enctype="multipart/form-data">
                         @csrf
 
                         <div class="space-y-6">
@@ -27,7 +27,7 @@
                             </div>
                             <div>
                                 <label for="page_content" class="block font-medium text-sm text-gray-700">
-                                    {{ __('Номын хавтас (Cover)') }}
+                                    {{ __('Хуудас') }}
                                 </label>
                                 <input id="page_content" name="page_content" type="file"
                                     class="block w-full text-sm text-gray-500 mt-1

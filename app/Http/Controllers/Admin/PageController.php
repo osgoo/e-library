@@ -25,8 +25,11 @@ class PageController extends Controller
         $book = Book::findOrFail($id);
         $validated = $request->validate([
             'page_number' => ['required', 'integer'],
-            'page_content' => ['required', 'string'],
+            'page_content' => ['nullable', 'image'],
         ]);
+        if(request()->hasFile('page_content')){
+            $validated['page_content'] = request()->file('page_content')->store('images', 'public');
+        }
         $validated['book_id'] = $book->id;
         Page::create($validated);
 

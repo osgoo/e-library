@@ -9,7 +9,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
 </head>
-<body class="h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans flex flex-col">
+{{-- Өөрчлөлт: bg-gray-100 -> bg-yellow-50, text-gray-900 -> text-yellow-900 --}}
+<body class="h-screen bg-yellow-50 dark:bg-gray-900 text-yellow-900 dark:text-gray-100 font-sans flex flex-col">
 
     <div class="flex flex-1 overflow-hidden">
 
@@ -17,7 +18,8 @@
 
             @include('layouts.inc.app.header')
 
-            <main class="flex-1 overflow-y-auto bg-gray-100 dark:bg-gray-800 p-6">
+            {{-- Өөрчлөлт: bg-gray-100 -> bg-yellow-50 --}}
+            <main class="flex-1 overflow-y-auto bg-yellow-50 dark:bg-gray-800 p-6">
                 @yield('content')
             </main>
 
@@ -65,40 +67,7 @@
             });
         });
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const swiper = new Swiper('.page-slider', {
-                slidesPerView: 2,
-                spaceBetween: 16,
-                pagination: {
-                    el: '.page-slider-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.page-slider-next',
-                    prevEl: '.page-slider-prev',
-                },
-                breakpoints: {
-                    640: {
-                      slidesPerView: 3,
-                      spaceBetween: 16,
-                    },
-                    768: {
-                      slidesPerView: 4,
-                      spaceBetween: 16,
-                    },
-                    1024: {
-                      slidesPerView: 5,
-                      spaceBetween: 16,
-                    },
-                    1280: {
-                        slidesPerView: 2,
-                        spaceBetween: 16,
-                    }
-                }
-            });
-        });
-    </script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const bookSwiper = new Swiper('.book-slider', {
@@ -135,7 +104,7 @@
                     spaceBetween: 16,
                     },
                     1024: {
-                    slidesPerView: 5, 
+                    slidesPerView: 5,
                     spaceBetween: 16,
                     },
                 }

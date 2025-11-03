@@ -9,6 +9,9 @@ class Book extends Model
     protected $table = 'books';
     protected $fillable = ['title', 'author', 'description', 'cover', 'published_year','category_id'];
 
+
+    protected $with = ['pages', 'category'];
+
     public function category(){
         return $this->belongsTo(Category::class);
     }

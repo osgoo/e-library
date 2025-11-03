@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
             $table->foreignId('book_id')->constrained('books')->cascadeOnDelete();
-            $table->integer('page_number')->unique();
+            $table->integer('page_number');
             $table->string('page_content');
             $table->timestamps();
+
+            $table->unique(['book_id', 'page_number']);
         });
     }
 
